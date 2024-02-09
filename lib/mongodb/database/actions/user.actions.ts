@@ -11,6 +11,7 @@ import Event from "../models/event.model";
 export const createUser = async (user: CreateUserParams) => {
     try {
         await connectToDatabase();
+        console.log(user);
         const newUser = await User.create(user);
         return JSON.parse(JSON.stringify(newUser));
     } catch (error) {
